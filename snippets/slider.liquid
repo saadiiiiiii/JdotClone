@@ -1,0 +1,34 @@
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <a href="{{ settings.slide_1_link }}">
+        <img width="100%" height="100%" src="{{ settings.slide_1_image | img_url: 'original' }}" alt="{{ settings.slide_1_title }}">
+        <h2>{{ settings.slide_1_title }}</h2>
+        <p>{{ settings.slide_1_description }}</p>
+      </a>
+    </div>
+
+    <div class="swiper-slide">
+      <a href="{{ settings.slide_2_link }}">
+        <img width="100%" height="100%" src="{{ settings.slide_2_image | img_url: 'original' }}" alt="{{ settings.slide_2_title }}">
+        <h2>{{ settings.slide_2_title }}</h2>
+        <p>{{ settings.slide_2_description }}</p>
+      </a>
+    </div>
+  </div>
+
+  <!-- Swiper buttons -->
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+<script>
+  var swiper = new Swiper('.mySwiper', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    }
+  });
+</script>

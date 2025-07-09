@@ -1,0 +1,74 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "TopAnnouncementBar": {
+      "type": "TopAnnouncementBar",
+      "blocks": {
+        "block_tGBJbz": {
+          "type": "block",
+          "settings": {
+            "announcement_text": "Default Text",
+            "announcement_link_text": "Get Now",
+            "announcement_link": "/"
+          }
+        },
+        "block_jmDPHY": {
+          "type": "block",
+          "settings": {
+            "announcement_text": "Default Text",
+            "announcement_link_text": "Get Now",
+            "announcement_link": "/"
+          }
+        },
+        "block_WBiARW": {
+          "type": "block",
+          "settings": {
+            "announcement_text": "Default Text",
+            "announcement_link_text": "Get Now",
+            "announcement_link": "/"
+          }
+        }
+      },
+      "block_order": [
+        "block_tGBJbz",
+        "block_jmDPHY",
+        "block_WBiARW"
+      ],
+      "settings": {
+        "background_color": "#fdc8c8",
+        "text_color": "#000000"
+      }
+    },
+    "welcome_bar_hKjjbH": {
+      "type": "welcomeBar",
+      "settings": {
+        "welcome-bar-welcom-text": "Welcom to J.",
+        "URL1_text": "Tracking Info",
+        "URL1": "/",
+        "URL2_text": "Corporate Inquiry",
+        "URL2": "/",
+        "URL3_text": "Create An Account",
+        "URL3": "/",
+        "text_color": "#000000",
+        "background_color": "#d5d5d5"
+      }
+    },
+    "header_4TnDV9": {
+      "type": "header",
+      "settings": {}
+    }
+  },
+  "order": [
+    "TopAnnouncementBar",
+    "welcome_bar_hKjjbH",
+    "header_4TnDV9"
+  ]
+}

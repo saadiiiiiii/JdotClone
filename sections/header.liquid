@@ -1,0 +1,67 @@
+<section>
+    <div class="header-wrapper">
+        {% if section.settings["Logo"] %}
+            <img width="40" height="40" src="{{ section.settings.Logo | asset_url }}" alt="Description of image" />
+         {% else %}
+         <img width="40" height="40" src="{{ 'new_logo.webp' | asset_url }}" alt="Description of image" />
+        {% endif %}
+        <div class="menu-wrapper">
+            <ul>
+            {% for link in linklists[section.settings.main_linklist].links %}
+                <li>{{link.title|link_to:link.url}}</li>    
+            {% endfor %}
+            </ul>
+         </div>
+    </div>
+
+</section>
+<style>
+    .header-wrapper{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 30px 0;
+    }
+    .menu-wrapper ul{
+        display: flex;
+        list-style: none;
+        gap: 30px;
+    }
+    .menu-wrapper ul a{
+        color: {{section.settings.menu_link_color}};
+
+    }
+
+</style>
+
+{% schema %}
+{
+    "name": "header",
+    "settings": [
+        {
+            "type": "image_picker",
+            "label": "Logo",
+            "id": "Logo",
+            "info": "Pick your logo",
+        },
+        {
+        "type": "link_list",
+        "id": "main_linklist",
+        "label": "Menu",
+        "default": "main-menu"
+      },
+      {
+        "type": "color",
+        "id": "menu_link_color",
+        "label": "Menu",
+        "default":"#000000"
+      }
+        ],
+        "presets": [
+            {
+                "name": "header"
+            }
+        ]
+}
+{% endschema %}

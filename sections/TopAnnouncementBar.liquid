@@ -1,0 +1,122 @@
+
+    <section class="announcementBarSection" id="announcementBarSection">
+        <button class="close-button" id="closeAnnouncementBar" aria-label="Close">×</button>
+  <div class="TopAnnouncementBar" >
+    <div class="announcement-carousel">
+      <div class="carousel-track">
+        {% for block in section.blocks %}
+          <div class="carousel-item">
+            <span class="announcement-text">
+               
+                        {{ block.settings.announcement_text }} 
+                        
+                    <a class="announcement-link" href="{{ block.settings.announcement_link }}" style="color: {{ settings.text_color }};">{{ block.settings.announcement_link_text}} </a>
+            
+            </span>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    
+      <button class="scroll-left" >&#8592;</button>
+      <button class="scroll-right">&#8594;</button>
+    
+  </div>
+</section>
+<style>
+    .announcementBarSection{
+        padding-top: 0px;
+        background-color: {{ section.settings.background_color }}; 
+        color: {{ section.settings.text_color }};
+    }
+  @media only screen and (max-width: 600px) {
+  .announcementBarSection{
+        padding-top: 15px;
+    }
+}
+    .announcement-text a{
+        color: {{ section.settings.text_color }};
+    }
+    .announcementBarSection button{
+        color: {{ section.settings.text_color }};
+    
+    }
+    .close-button {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: transparent;
+  color: {{ section.settings.text_color }};
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 20;
+}
+
+</style>
+
+{% schema %}
+{
+    "name": "TopAnnouncementBar",
+    "settings": [
+        {
+      "type": "color",
+      "label": "Background Color",
+      "id": "background_color",
+      "default": "#000000",
+      "info": "Select the background color for the announcement bar."
+    },
+    {
+      "type": "color",
+      "label": "Text Color",
+      "id": "text_color",
+      "default": "#ffffff",
+      "info": "Select the text color for the announcement bar."
+    }
+        ],
+        "blocks": [
+          {
+            "type": "block",
+            "name":"Announcement Item",
+            "limit": 4,
+            "settings": [
+                {
+          "type": "text",
+          "label": "Announcement Text",
+          "id": "announcement_text",
+          "default": "Limited time offer",
+          "info": "The text to display in the announcement bar."
+        },
+        {
+          "type": "text",
+          "label": "Text for Link",
+          "id": "announcement_link_text",
+          "default": "Get Now",
+          "info": "The link for the announcement's 'See More'."
+        },
+        {
+          "type": "url",
+          "label": "Link for Announcement",
+          "id": "announcement_link",
+          "default": "/",
+          "info": "The link for the announcement's 'See More'."
+        }
+            ]
+          }  
+        ],
+    "presets": [
+          {
+              "name":"TopAnnouncementBar"
+          }
+        ]
+}
+{% endschema %}
+
+
+
+
+
+
+
+

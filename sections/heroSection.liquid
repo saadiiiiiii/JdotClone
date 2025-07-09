@@ -1,0 +1,40 @@
+<section>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+              <img width="100%" height="100%" src="{{ settings.slide_1_image | img_url: 'original' }}" alt="{{ settings.slide_1_title }}">
+          </div>
+      
+          <div class="swiper-slide">
+              <img width="100%" height="100%" src="{{ settings.slide_2_image | img_url: 'original' }}" alt="{{ settings.slide_2_title }}">
+          </div>
+        </div>
+      
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+</section>
+
+{% schema %}
+{
+    "name": "herosection",
+   "settings": [
+    {
+      "type": "image_picker",
+      "label": "Slide 1 Image",
+      "id": "slide_1_image",
+    },
+    {
+      "type": "image_picker",
+      "label": "Slide 2 Image",
+      "id": "slide_2_image",
+    }
+   
+  ],
+        "presets": [
+            {
+                "name": "herosection"
+            }
+        ]
+}
+{% endschema %}
